@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom' // ✅ import this
 import { assets } from '../assets/assets'
 import { AppContext } from '../context/AppContext'
 
 const Result = () => {
   const { resultImage, image } = useContext(AppContext)
+  const navigate = useNavigate() // ✅ use it here
 
   const downloadImage = () => {
     const link = document.createElement('a')
@@ -12,6 +14,10 @@ const Result = () => {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const goHome = () => {
+    navigate('/')
   }
 
   return (
@@ -51,7 +57,9 @@ const Result = () => {
         {/*-----buttons------- */}
         {resultImage && (
           <div className='flex justify-center sm:justify-end items-center flex-wrap gap-4 mt-6'>
-            <button className='px-8 py-2.5 text-violet-600 text-sm border border-violet-600 rounded-full hover:scale-105 transition-all duration-700'>
+            <button
+              onClick={goHome}
+              className='px-8 py-2.5 text-violet-600 text-sm border border-violet-600 rounded-full hover:scale-105 transition-all duration-700'>
               Try another image
             </button>
             <button
