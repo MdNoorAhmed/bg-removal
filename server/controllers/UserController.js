@@ -73,7 +73,7 @@ const clerkWebhooks = async (req, res) => {
 const userCredits = async (req, res) => {
     try {
 
-        const { clerkId } = req.body
+        const { clerkId } = req
 
         const userData = await userModel.findOne({clerkId})
 
@@ -84,5 +84,7 @@ const userCredits = async (req, res) => {
         res.json({success:false,message:error.message})
     }
 }
+
+
 
 export {clerkWebhooks, userCredits}
