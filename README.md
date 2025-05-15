@@ -70,9 +70,6 @@ CLIPDROP_API=your_clipdrop_key
 
 PORT=4000
 
-BASE_URL=https://your-backend-url.onrender.com
-
-
 ---
 
 ## 🖼️ Screenshots
