@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PaymentInfo from './pages/PaymentInfo'
+
 
 
 const App = () => {
@@ -18,6 +20,8 @@ const App = () => {
 <Route path='/' element={<Home/>}/>
 <Route path='/result' element={<Result/>}/>
 <Route path='/buy' element={<BuyCredit/>}/>
+<Route path='/payment-info' element={<PaymentInfo />} />
+
       </Routes>
     <Footer/>
     </div>

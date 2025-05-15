@@ -1,7 +1,13 @@
 import React from 'react'
 import { assets, plans } from '../assets/assets'
 
+import { useNavigate } from 'react-router-dom'
+
+
 const BuyCredit = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div className='min-h-[80vh] text-center pt-14 mb-10'>
       <button className='border border-gray-400 px-10 py-2 rounded-full mb-6'>Our Plans</button>
@@ -16,7 +22,8 @@ const BuyCredit = () => {
               <p className='mt-6'>
                 <span className='text-3xl font-medium'>${item.price}</span>/ {item.credits} credits
               </p>
-              <button className='w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52'>Purchase</button>
+              <button   onClick={() => navigate('/payment-info')}
+ className='w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52'>Purchase</button>
           </div>
         ))}
       </div>
